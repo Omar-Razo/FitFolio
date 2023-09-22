@@ -1,0 +1,44 @@
+[
+    {
+        "activity_type": "cardio",
+        "duration": "20",
+        "date_created": "December 22, 2020 11:00:00",
+        "user_id": ""
+    },
+    {
+        "activity_type": "strength",
+        "duration": "45",
+        "date_created": "June 22, 2021 09:00:00",
+        "user_id": ""
+    },
+    {
+        "activity_type": "strength",
+        "duration": "10",
+        "date_created": "June 23, 2021 09:00:00",
+        "user_id": ""
+    },
+    {
+        "activity_type": "cycling",
+        "duration": "90",
+        "date_created": "July 12, 2021 12:00:00",
+        "user_id": ""
+    },
+    {
+        "activity_type": "swimming",
+        "duration": "24",
+        "date_created": "July 12, 2021 12:00:00",
+        "user_id": ""
+    },
+    {
+        "activity_type": "hiking",
+        "duration": "180",
+        "date_created": "July 09, 2021 12:00:00",
+        "user_id": ""
+    },
+    {
+        "activity_type": "yoga",
+        "duration": "30",
+        "date_created": "August 29, 2021 16:00:00",
+        "user_id": ""
+    }
+]

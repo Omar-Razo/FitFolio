@@ -1,0 +1,42 @@
+[
+  {
+    "name": "Sal",
+    "email": "sal@hotmail.com",
+    "password": "password12345",
+    "height": "65",
+    "weight": "190",
+    "age": "23"
+  },
+  {
+    "name": "Lernantino",
+    "email": "lernantino@gmail.com",
+    "password": "password123",
+    "height": "69",
+    "weight": "165",
+    "age": "18"
+  },
+  {
+    "name": "Amiko",
+    "email": "amiko2k20@aol.com",
+    "password": "password54321",
+    "height": "62",
+    "weight": "110",
+    "age": "27"
+  },
+  {
+    "name": "Inez",
+    "email": "inthenez@live.com",
+    "password": "quesadilla$",
+    "height": "64",
+    "weight": "125",
+    "age": "22"
+  },
+  {
+    "name": "Marco",
+    "email": "mpolo@gmail.com",
+    "password": "waterp0l0",
+    "height": "67",
+    "weight": "146",
+    "age": "25"
+  }
+]
