@@ -1,28 +1,19 @@
 const router = require('express').Router();
-const { User, Activity } = require('../models')
+const { User } = require('../models')
 
-router.get('/users', async (req, res) => {
+router.get('/', async (req, res) => {
   try {
-    const activityData = await Activity.findAll({
-    });
-
-    res.status(200).json(activityData);
-  } catch (err) {
-    console.log(err);
-    res.status(500).json(err);
-  }
-});
-
-router.get('/users', async (req, res) => {
-  try {
+    // Get all users, sorted by name
     const userData = await User.findAll({
+      attributes: { exclude: ['password'] },
+      order: [['name', 'ASC']],
     });
 
-    res.status(200).json(userData);
+    // Pass serialized data into Handlebars.js template
+    res.render('homepage', {});
   } catch (err) {
-    console.log(err);
     res.status(500).json(err);
   }
 });
 
-module.exports = router;
+module.exports = router; 
