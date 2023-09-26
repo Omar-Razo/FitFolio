@@ -1,3 +1,7 @@
+html,body {
+  height: 100;
+}
+
 h1 {
   background-color: rgb(162, 197, 220);
   padding: 30px;
@@ -24,4 +28,9 @@ hr {
   font-style: italic;
   font-size: 10;
   font-variant-position: sub;
+}
+
+body {
+  background-color: #333;
+  background-image: url('../img/Long_Distance_Runners\,_Ancient_Greece\,_Amphora.png');
 }
