@@ -1,37 +1,46 @@
-{{#each users as |user| }}
-<section class="container">
-    <div class="card">
-      <div class="card-image"><img src="/assets/image/th (21).jpeg"
-        alt="" style="height: 90%"
-        /></div>
-      <p>10 core Exercises to Supercharge Gains</p>
-    </div>
-    <div class="card">
-      <div class="card-image">
-  <img
-    src="/assets/image/Red-Guava-PNG-Download-Image.png"
-    alt=""
-    style="height: 105%"/>
-    <p>Guava superfood for heart health</p>
+<h2>Sign-Up</h2>
 
-</div></div>
+<form class="form actvity-form">
+    <div class="form-group">
+        <label for="activity-type">activity type:</label>
+        <input class="form-input" list="activity-type"/>
+        <datalist id="browsers">
+            <option value="Internet Explorer">
+            <option value="Firefox">
+            <option value="Chrome">
+            <option value="Opera">
+            <option value="Safari">
+        </datalist>
     </div>
-    <div class="card">
-      <div class="card-image">
-  <img
-    src="/assets/image/maxresdefault.jpg"
-    alt=""
-    style="height: 90%"
-  /></div>
-      <p>Try this 5-Minute Boxing inspired Dumbbell workout for power</p>
+
+    <div class="form-group">
+        <label for="email-login">email:</label>
+        <input class="form-input" type="text" id="email-login" />
     </div>
-    <div class="card">
-      <div class="card-image">
-  <img
-    src="/assets/image/running sh.jpg"
-    alt=""
-    style="height: 90%"></div>
-      <p>13 Best pairs of Running shorts 2023</p>
+
+    <div class="form-group">
+        <label for="password-login">password:</label>
+        <input class="form-input" type="password" id="password-login" />
     </div>
-  </section>
-   {{/each}}
+
+    <div class="form-group">
+        <label for="height">height:</label>
+        <input class="form-input" type="text" id="height" />
+    </div>
+
+    <div class="form-group">
+        <label for="weight">weight:</label>
+        <input class="form-input" type="text" id="weight" />
+    </div>
+
+    <div class="form-group">
+        <label for="age">age:</label>
+        <input class="form-input" type="text" id="age" />
+    </div>
+
+    <div class="form-group">
+        <button class="btn btn-primary" type="submit">login</button>
+    </div>
+</form>
+
+<script src="/public/js/activity-input.js"></script>
