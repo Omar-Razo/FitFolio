@@ -115,3 +115,8 @@ hr {
 .btn-primary:hover {
   background-color: #0069d9;
 }
+
+body {
+  background-color: #333;
+  background-image: url('../img/Long_Distance_Runners\,_Ancient_Greece\,_Amphora.png');
+}
