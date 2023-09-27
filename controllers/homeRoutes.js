@@ -1,70 +1,34 @@
 const router = require('express').Router();
 const { User } = require('../models');
-const withAuth = require('../utils/auth');
+// const withAuth = require('../utils/auth');
 
-router.get('/', withAuth, async (req, res) => {
+router.get('/', async (req, res) => {
   try {
-    const userData = await User.findAll({
-      attributes: { exclude: ['password'] },
-      order: [['name', 'ASC']],
-    });
+      const userData = await User.findByPk(req.session.user_id, {
+          attributes: { exclude: ['password'] },
+          include: [{ model: DailyLog, Activity }],
+      });
+      console.log("rawData", userData)
 
-    const users = userData.map((project) => project.get({ plain: true }));
+      const user = userData.map((data) => data.get({ plain: true }));
+      console.log("serialized data", user)
 
-    res.render('blank', {
-      users,
-      logged_in: req.session.logged_in,
-    });
+      res.render('dashboard', { 
+          ...user, 
+          logged_in: req.session.logged_in 
+      });
   } catch (err) {
-    res.status(500).json(err);
+      res.status(500).json(err);
   }
 });
 
+// redirects to login if not logged in
 router.get('/login', (req, res) => {
   if (req.session.logged_in) {
     res.redirect('/');
     return;
   }
-
-  res.render('login');
-});
-
-// just gets json data *for route testing*
-router.get('/all', async (req, res) => {
-  try {
-    // Get all users, sorted by name
-    const userData = await User.findAll({
-      attributes: { exclude: ['password'] }
-    });
-
-    // Pass serialized data into Handlebars.js template
-    res.render('homepage', {});
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
-
-router.get('/login', (req, res) => {
-  if (req.session.logged_in) {
-    res.redirect('/');
-    return;
-  }
-
-  res.render('login');
-});
-
-// just gets json data *for route testing*
-router.get('/all', async (req, res) => {
-  try {
-    const userData = await User.findAll({
-      attributes: { exclude: ['password'] }
-    });
-
-    res.status(200).json(userData);
-  } catch (err) {
-    console.log(err);
-    res.status(500).json(err);
-  }
+  res.render('login-signup');
 });
 
 module.exports = router; 

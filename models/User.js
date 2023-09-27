@@ -46,6 +46,22 @@ User.init(
     age: {
         type: DataTypes.INTEGER,
         allowNull: false
+    },
+    gender: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        validate: {
+            isGender(val) {
+                if(!['male', 'Male', 'female', 'Female'].includes(val)) {
+                    throw new Error('Gender must be Male or Female');
+                }
+            } 
+        }
+    },
+    role: {
+        type: DataTypes.STRING,
+        defaultValue: 'user',
+        allowNull: false
     }
     },
     { 

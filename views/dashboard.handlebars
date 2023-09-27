@@ -1,26 +1,30 @@
-{{#each users as |user|}}
-  <div
-    class="columns is-variable is-1-mobile is-0-tablet is-3-desktop is-8-widescreen is-3-fullhd"
-  >
-    <div class="column">
-
-      <img src="/assets/image/th (1).jpeg" alt="" style="width: 80%" />
-      <p>Stops</p>
+<section class="columns main-stats justify-space-between">
+  <div class="column stat steps">
+    <div class="img-container">    
+      <img src="../public/image/01-th (1).jpeg" alt="woman running">
     </div>
-    <div class="column">
-      <img
-        src="/assets/image/meal-prep-black-lunch.webp"
-        alt=""
-        style="width: 80%"
-        ,
-        border-radius:
-        100px;
-      />
-      <p>calories Intake</p>
-    </div>
-    <div class="column">
-      <img src="/assets/image/wp2491522.jpg" alt="" style="width: 80%" />
-      <p>High intensity Minutes</p>
-    </div>
+    <p>{{dailylog.step_count}}</p>
   </div>
-{{/each}}
+
+  <div class="column stat calories">
+    <div class="img-container">    
+      <img src="../public/image/02-meal-prep-black-lunch.webp" alt="healthy lunch set out">
+    </div>
+    <p>{{dailylog.calories_consumed}}</p>
+  </div>
+
+  <div class="column stat high-intensity">
+    <div class="img-container">    
+      <img src="../public/image/03-wp2491522.jpg" alt="hand lifting weight">
+    </div>
+    <p>{{dailylog.activity_minutes}}</p>
+  </div>
+</section>
+
+<section class="activity-feed">
+    {{#if projects.length}}
+      {{#each activities as |activity|}}
+      {{> activity-details}}
+      {{/each}}
+    {{/if}}
+</section>

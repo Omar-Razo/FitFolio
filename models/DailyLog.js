@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Profile extends Model {}
+class DailyLog extends Model {}
 
-Profile.init(
+DailyLog.init(
     {
     id: {
         type: DataTypes.INTEGER,
@@ -11,9 +11,21 @@ Profile.init(
         primaryKey: true,
         autoIncrement: true,
     },
+    calories_consumed: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+    },
+    step_count: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+    },
+    activity_minutes: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+    },
     date_created: {
-        type: DataTypes.DATE,
-        allowNull: false,
+        type: DataTypes.DATEONLY,
+        defaultValue: DataTypes.NOW
     },
     user_id: {
         type: DataTypes.INTEGER,
@@ -25,11 +37,10 @@ Profile.init(
     },
     {
         sequelize,
-        timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'profile',
+        modelName: 'dailylog',
     }
 )
 
-module.exports = Profile;
+module.exports = DailyLog;

@@ -20,8 +20,8 @@ Activity.init(
         allowNull: false,
     },
     date_created: {
-        type: DataTypes.DATE,
-        allowNull: false,
+        type: DataTypes.DATEONLY,
+        defaultValue: DataTypes.NOW
     },
     user_id: {
         type: DataTypes.INTEGER,
@@ -33,7 +33,6 @@ Activity.init(
     },
     {
         sequelize,
-        timestamps: false,
         freezeTableName: true,
         underscored: true,
         modelName: 'activity',

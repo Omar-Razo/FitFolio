@@ -1,24 +1,34 @@
 * {
   box-sizing: border-box;
 }
+
+:root {
+  --jet: #32322e;
+  --charcoal: #374048;
+  --orange: #ca6c37;
+  --indigo: #1b3d5d;
+  --tan: #c8aa8f;
+}
+
 body {
-  background-color: #f1f1f1;
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans", Arial, sans-serif;
-  border-bottom: 80px;
+  /* background-color: #f1f1f1; */
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif, cursive;
+  background-image: url('../img/Running_Man_Kyle_Cassidy.jpg');
+  font-size: 20px;
 }
-.column {
-  margin-left: 100px;
-}
+
 h1 {
-  background-color: rgb(162, 197, 220);
-  padding: 30px;
-  border-top: 25px solid rgb(201, 201, 201);
+  padding: 1rem;
   height: auto;
   min-height: 50px;
-  color: paleturquoise;
-  font-size: xx-large;
+  color: var(--indigo);
+  font-size: 8rem;
 }
+
+h1 img {
+  height: 7rem;
+}
+
 hr {
   /* Lines to sepearte upper column from the lower column  */
   border: 20px;
@@ -29,13 +39,10 @@ hr {
 .h2 {
   padding-left: 100px;
 }
-.column img {
+/* .column img {
   border-radius: 100px;
-}
-.column:hover {
-  transform: scale(1.1);
-  transition: all 1s ease;
-}
+} */
+
 .container {
   display: flex;
   justify-content: center;
@@ -69,11 +76,14 @@ hr {
 
 /*Styling for the login and signup page */
 
-.column {
+.columns {
   display: flex;
-  justify-content: space-between;
-  margin: 0 auto;
-  max-width: 800px;
+  justify-content: flex-end;
+  flex-flow: row wrap;
+}
+
+.column {
+  max-width: 600px;
   padding: 20px;
 }
 
@@ -116,7 +126,11 @@ hr {
   background-color: #0069d9;
 }
 
-body {
-  background-color: #333;
-  background-image: url('../img/Long_Distance_Runners\,_Ancient_Greece\,_Amphora.png');
+.motto p {
+  padding-inline: 30px;
+  font-size: 120%;
+}
+
+.motto-bold {
+  color: var(--orange);
 }

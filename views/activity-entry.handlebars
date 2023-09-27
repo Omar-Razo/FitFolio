@@ -1,0 +1,35 @@
+<h2>Activity Entry</h2>
+
+<form class="form activity-form">
+    <div class="form-group">
+        <label for="activity-type">activity type:</label>
+        <input class="form-input" list="activity-type"/>
+        <datalist id="activity-type">
+            <option value="cardio">
+            <option value="strength">
+            <option value="cycling">
+            <option value="swimming">
+            <option value="running">
+            <option value="hiking">
+            <option value="yoga">
+            <option value="dance">
+            <option value="core">
+            <option value="walking">
+            <option value="weights">
+            <option value="pilates">
+            <option value="boxing">
+            <option value="rowing">
+        </datalist>
+    </div>
+
+    <div class="form-group">
+        <label for="activity-duration">duration (in minutes):</label>
+        <input class="form-input" type="number" id="activity-duration" min="1"/>
+    </div>
+
+    <div class="form-group">
+        <button class="btn btn-primary" type="submit">Submit</button>
+    </div>
+</form>
+
+<script src="/public/js/activity-entry.js"></script>

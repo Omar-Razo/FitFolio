@@ -13,7 +13,7 @@ const withAuth = (req, res, next) => {
     return;
   }
 
-  const allowedRoles = ['admin'];
+  const allowedRoles = ['admin', 'user'];
   if (!allowedRoles.includes(userRole)) {
     console.error('User does not have permission to access this page');
     res.redirect('/unauthorized');
