@@ -1,3 +1,15 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  background-color: #f1f1f1;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  border-bottom: 80px;
+}
+.column {
+  margin-left: 100px;
+}
 h1 {
   background-color: rgb(162, 197, 220);
   padding: 30px;
@@ -7,21 +19,99 @@ h1 {
   color: paleturquoise;
   font-size: xx-large;
 }
-
 hr {
+  /* Lines to sepearte upper column from the lower column  */
   border: 20px;
   height: 1px;
   color: #333;
   background-color: #333;
 }
-
+.h2 {
+  padding-left: 100px;
+}
 .column img {
   border-radius: 100px;
 }
+.column:hover {
+  transform: scale(1.1);
+  transition: all 1s ease;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.card {
+  background: white;
+  width: 500px;
+  height: 400px;
+  margin: 30px;
+}
+.card-image {
+  background-color: rgb(199, 221, 230);
+  height: 360px;
+  border-bottom: 100px;
+  margin-bottom: 1px;
+}
+.card p {
+  padding: 10px;
+  background-color: black;
+  text-align: left;
+  display: block;
+}
+.card:hover {
+  background-color: black;
+  color: #333;
+  cursor: pointer;
+  transform: scale(1.01);
+  transition: all 1s ease;
+}
 
-.p {
+/*Styling for the login and signup page */
+
+.column {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  max-width: 800px;
+  padding: 20px;
+}
+
+.login-card,
+.signup-card {
+  background-color: rgb(162, 197, 220);
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 100%;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-input {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  width: 100%;
+}
+
+.btn {
+  background-color: #ccc;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  padding: 10px 20px;
   text-align: center;
-  font-style: italic;
-  font-size: 10;
-  font-variant-position: sub;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background-color: #0069d9;
 }
