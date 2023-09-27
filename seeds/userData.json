@@ -5,7 +5,9 @@
     "password": "password12345",
     "height": "65",
     "weight": "190",
-    "age": "23"
+    "age": "23",
+    "gender": "Male",
+    "role": "user"
   },
   {
     "name": "Lernantino",
@@ -13,7 +15,9 @@
     "password": "password123",
     "height": "69",
     "weight": "165",
-    "age": "18"
+    "age": "18",
+    "gender": "Male",
+    "role": "user"
   },
   {
     "name": "Amiko",
@@ -21,7 +25,9 @@
     "password": "password54321",
     "height": "62",
     "weight": "110",
-    "age": "27"
+    "age": "27",
+    "gender": "Female",
+    "role": "user"
   },
   {
     "name": "Inez",
@@ -29,7 +35,9 @@
     "password": "quesadilla$",
     "height": "64",
     "weight": "125",
-    "age": "22"
+    "age": "22",
+    "gender": "Female",
+    "role": "user"
   },
   {
     "name": "Marco",
@@ -37,6 +45,8 @@
     "password": "waterp0l0",
     "height": "67",
     "weight": "146",
-    "age": "25"
+    "age": "25",
+    "gender": "Male",
+    "role": "admin"
   }
 ]
