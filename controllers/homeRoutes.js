@@ -32,13 +32,14 @@ router.get('/login', (req, res) => {
 // just gets json data *for route testing*
 router.get('/all', async (req, res) => {
   try {
+    // Get all users, sorted by name
     const userData = await User.findAll({
       attributes: { exclude: ['password'] }
     });
 
-    res.status(200).json(userData);
+    // Pass serialized data into Handlebars.js template
+    res.render('homepage', {});
   } catch (err) {
-    console.log(err);
     res.status(500).json(err);
   }
 });
