@@ -1,21 +1,39 @@
 const router = require('express').Router();
-const { User } = require('../models');
-// const withAuth = require('../utils/auth');
+const { User, DailyLog, Activity } = require('../models');
+const withAuth = require('../utils/auth');
 
-router.get('/', async (req, res) => {
+router.get('/', withAuth, async (req, res) => {
   try {
       const userData = await User.findByPk(req.session.user_id, {
           attributes: { exclude: ['password'] },
           include: [{ model: DailyLog, Activity }],
       });
-      console.log("rawData", userData)
 
-      const user = userData.map((data) => data.get({ plain: true }));
-      console.log("serialized data", user)
+      const userStats = userData.map((user) => user.get({ plain: true }))
 
+      res.status(200).json(userStats);
       res.render('dashboard', { 
-          ...user, 
-          logged_in: req.session.logged_in 
+        userStats, 
+        logged_in: req.session.logged_in 
+      });
+  } catch (err) {
+      res.status(500).json(err);
+  }
+});
+
+router.get('/dashboard', withAuth, async (req, res) => {
+  try {
+      const userData = await User.findByPk(req.session.user_id, {
+          attributes: { exclude: ['password'] },
+          include: [{ model: DailyLog, Activity }],
+      });
+
+      const userStats = userData.map((user) => user.get({ plain: true }))
+
+      res.status(200).json(userStats);
+      res.render('dashboard', { 
+        userStats, 
+        logged_in: req.session.logged_in 
       });
   } catch (err) {
       res.status(500).json(err);

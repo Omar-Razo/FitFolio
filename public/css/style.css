@@ -80,11 +80,11 @@ hr {
   display: flex;
   justify-content: flex-end;
   flex-flow: row wrap;
+  padding-inline: 100px;
 }
 
 .column {
-  max-width: 600px;
-  padding: 20px;
+  max-width: 500px;
 }
 
 .login-card,

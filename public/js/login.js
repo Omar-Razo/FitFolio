@@ -14,8 +14,7 @@ const loginFormHandler = async (event) => {
     });
 
     if (response.ok) {
-      // If successful, redirect the browser to the profile page
-      document.location.replace('/');
+      return
     } else {
       alert(response.statusText);
     }
@@ -28,16 +27,20 @@ const signupFormHandler = async (event) => {
   const name = document.querySelector('#name-signup').value.trim();
   const email = document.querySelector('#email-signup').value.trim();
   const password = document.querySelector('#password-signup').value.trim();
+  const height = document.querySelector('#user-height').value;
+  const weight = document.querySelector('#user-weight').value;
+  const age = document.querySelector('#user-age').value;
+  const gender = document.querySelector('#user-gender').value;
 
-  if (name && email && password) {
+  if (name && email && password && height && weight && age && gender) {
     const response = await fetch('/api/users', {
       method: 'POST',
-      body: JSON.stringify({ name, email, password }),
+      body: JSON.stringify({ name, email, password, height, weight, age, gender }),
       headers: { 'Content-Type': 'application/json' },
     });
 
     if (response.ok) {
-      document.location.replace('/');
+      return
     } else {
       alert(response.statusText);
     }
