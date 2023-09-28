@@ -1,5 +1,5 @@
 # FitFolio
-## The Simple to Use Health and Fitness App for Everyone
+## The Simple to Use Health Tracker and Fitness App for Everyone
 
 ## Table of Contents
 1. [Project Description](#project-description)
@@ -35,6 +35,11 @@ FitFolio is a simple to use health and fitness app for everyone. It is applicati
 - Add social media sharing of workouts and progresS
 
 ## Deployed App Image
+### Screenshot of FitFolio Login and Sign Up Page
+![Alt text](fit-folio-13bba83b2006.herokuapp.com_login.png)
+
+### Screenshot of FitFolio Dashboard Page
+![Alt text](fit-folio-13bba83b2006.herokuapp.com_dashboard.png)
 
 ## Deployed App Link
 https://fit-folio-13bba83b2006.herokuapp.com/
