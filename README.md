@@ -36,16 +36,16 @@ FitFolio is a simple to use health and fitness app for everyone. It is applicati
 
 ## Deployed App Image
 ### FitFolio Login and Sign Up Page
-![Alt text](<fit-folio-13bba83b2006.herokuapp.com_login (1).png>)
+![Alt text](<public/img/fit-folio-13bba83b2006.herokuapp.com_login (1).png>)
 
 ### FitFolio Dashboard Page
-![Alt text](image-1.png)
+![Alt text](/public/img/image-1.png)
 
 ### FitFolio Daily Log Entry
-![Alt text](<image (1).png>)
+![Alt text](</public/img/image (1).png>)
 
 ### FitFolio Activity Log Entry
-![Alt text](<image (2).png>)
+![Alt text](</public/img/image (2).png>)
 
 ## Deployed App Link
 https://fit-folio-13bba83b2006.herokuapp.com/
