@@ -83,4 +83,16 @@ User.init(
     }
 );
 
+// Calculate BMI
+User.prototype.calculateBMI = function() {
+    const bmi = this.weight / (this.height ** 2) * 703;
+    return bmi;
+  }
+  
+  // Calculate BMR 
+  User.prototype.calculateBMR = function() {
+    const bmr = 88.362 + (13.397 * this.weight) + (4.799 * this.height) - (5.677 * this.age);
+    return bmr;
+  };
+
 module.exports = User;

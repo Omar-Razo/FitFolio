@@ -28,3 +28,26 @@
       {{/each}}
     {{/if}}
 </section>
+
+{{if loggedIn}}
+  // Make async request for BMI
+$.get('/api/users/bmi', function(data) {
+  $('#bmi').text(data); 
+});
+
+// Make async request for BMR
+$.get('/api/users/bmr', function(data) {
+  $('#bmr').text(data);
+});
+
+// Make async request for steps  
+$.get('/api/users/steps', function(data) {
+  $('#steps').text(data);
+});
+  <div class="footer">
+    <style>display:inline-block</style>
+    <ul>
+    <li id="bmi"></li> <li id ="bmr"></li> <li id = "steps"></li>
+    </ul>
+  </div>
+ {{/if loggedIn}}

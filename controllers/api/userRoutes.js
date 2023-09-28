@@ -68,5 +68,19 @@ router.post('/logout', (req, res) => {
     }
 });
 
-
+// GET BMI
+router.get('/bmi', (req, res) => {
+    // Calculate and return BMI
+  });
+  
+  // GET BMR
+  router.get('/bmr', (req, res) => {
+    // Calculate and return BMR 
+  });
+  
+  // GET steps
+  router.get('/steps', (req, res) => {
+    // Query database and return steps
+  });
+  
 module.exports = router;
