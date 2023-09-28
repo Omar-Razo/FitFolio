@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const { User, DailyLog, Activity } = require('../../models');
+const withAuth = require('../../utils/auth');
 
 //Create new user
 router.post('/', async (req, res) => {
@@ -56,7 +57,6 @@ router.post('/login', async (req, res) => {
             res.status(200).json({ 
                 user: userData, 
                 message: 'You are now logged in!',
-                // redirectUrl: '/dashboard'
             });
         });
     } catch (err) {
@@ -76,44 +76,25 @@ router.post('/logout', (req, res) => {
     }
 });
 
-// GET BMI
-router.get('/bmi', (req, res) => {
-    // Calculate and return BMI
-  });
-  
-  // GET BMR
-  router.get('/bmr', (req, res) => {
-    // Calculate and return BMR 
-  });
-  
-  // GET steps
-  router.get('/steps', (req, res) => {
-    // Query database and return steps
-  });
-
-  
-router.post('/activity/new', async (req, res) => {
+//updates daily log entry with new data (increment)
+router.put('/dailylog', withAuth, async (req, res) => {
     try {
-        const userData = await Activity.create({
-            activity_type: req.body.activity_type,
-            duration: req.body.duration
-        });
-
-        req.session.save(() => {
-            req.session.user_id = userData.id;
-            req.session.logged_in = true;
-            req.session.role = userData.role
-            res.status(200).json({ 
-                user: userData, 
-                message: 'You are now registered!',
-                // redirectUrl: '/dashboard'
-            });
-        });
-    } catch (err) {
-        console.log(err); 
+        const currentDate = new Date().toISOString().slice(0, 10); 
+        const existingLog = await DailyLog.findOne({ 
+            where: { date_created: currentDate , user_id: req.session.user_id 
+            }})
+        if (!existingLog) {
+            const newLog = await DailyLog.create({ date_created: currentDate, user_id: req.session.user_id });
+            console.log('New log created:', newLog);
+        } else {
+            await existingLog.increment(`${req.body.statType}`, { by: req.body.amount })
+            res.status(200).json(existingLog)
+        }
+    } catch {
         res.status(500).json(err);
-    };
-});
+        console.log(err)
+    }
+})
 
 
 module.exports = router;

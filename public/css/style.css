@@ -58,7 +58,6 @@ hr {
 }
 .card-image {
   background-color: rgb(199, 221, 230);
-  height: 360px;
   border-bottom: 100px;
   margin-bottom: 1px;
 }
@@ -70,7 +69,7 @@ hr {
 }
 .card:hover {
   background-color: black;
-  color: #333;
+  color: var(--tan);
   cursor: pointer;
   transform: scale(1.01);
   transition: all 1s ease;
@@ -148,7 +147,9 @@ hr {
 }
 
 .activity-feed {
+  display: flex;
   background-color: var(--charcoal);
   color: antiquewhite;
   padding: 2rem;
+  flex-flow: row wrap;
 }

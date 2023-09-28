@@ -2,6 +2,7 @@ const router = require('express').Router();
 const { User, DailyLog, Activity } = require('../models');
 const withAuth = require('../utils/auth');
 
+// default route
 router.get('/', withAuth, async (req, res) => {
   try {
       const userData = await User.findByPk(req.session.user_id, {
@@ -22,18 +23,28 @@ router.get('/', withAuth, async (req, res) => {
   }
 });
 
+// dashboard route (once user is logged in, redirects)
 router.get('/dashboard', withAuth, async (req, res) => {
   try {
+      const currentDate = new Date().toISOString().slice(0, 10);
       const userData = await User.findByPk(req.session.user_id, {
           attributes: { exclude: ['password'] },
-          include: [{ model: DailyLog, Activity }],
       });
 
-      const userStats = userData.get({ plain: true })
+      const user = userData.get({ plain: true })
+      console.log(user)
 
+      const activityData = await Activity.findAll({
+        where: {
+          user_id: req.session.user_id
+        }
+      })
+      const activities = activityData.map((acvitiy) => acvitiy.get({ plain: true }));
+      console.log(activities)
       
       res.render('dashboard', { 
-        userStats, 
+        user,
+        activities,
         logged_in: req.session.logged_in 
       });
   } catch (err) {
