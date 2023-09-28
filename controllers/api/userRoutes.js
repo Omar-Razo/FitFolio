@@ -56,7 +56,7 @@ router.post('/login', async (req, res) => {
             res.status(200).json({ 
                 user: userData, 
                 message: 'You are now logged in!',
-                redirectUrl: '/dashboard'
+                // redirectUrl: '/dashboard'
             });
         });
     } catch (err) {
@@ -105,7 +105,7 @@ router.post('/activity/new', async (req, res) => {
             res.status(200).json({ 
                 user: userData, 
                 message: 'You are now registered!',
-                redirectUrl: '/dashboard'
+                // redirectUrl: '/dashboard'
             });
         });
     } catch (err) {

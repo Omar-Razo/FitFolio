@@ -9,15 +9,16 @@ router.get('/', withAuth, async (req, res) => {
           include: [{ model: DailyLog, Activity }],
       });
 
-      const userStats = userData.map((user) => user.get({ plain: true }))
+      const userStats = userData.get({ plain: true })
 
-      res.status(200).json(userStats);
+      
       res.render('dashboard', { 
         userStats, 
         logged_in: req.session.logged_in 
       });
   } catch (err) {
       res.status(500).json(err);
+      console.log(err)
   }
 });
 
@@ -28,15 +29,16 @@ router.get('/dashboard', withAuth, async (req, res) => {
           include: [{ model: DailyLog, Activity }],
       });
 
-      const userStats = userData.map((user) => user.get({ plain: true }))
+      const userStats = userData.get({ plain: true })
 
-      res.status(200).json(userStats);
+      
       res.render('dashboard', { 
         userStats, 
         logged_in: req.session.logged_in 
       });
   } catch (err) {
       res.status(500).json(err);
+      console.log(err)
   }
 });
 

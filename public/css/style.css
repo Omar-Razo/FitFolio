@@ -8,6 +8,7 @@
   --orange: #ca6c37;
   --indigo: #1b3d5d;
   --tan: #c8aa8f;
+  --lightblue: rgb(162, 197, 220);
 }
 
 body {
@@ -38,6 +39,7 @@ hr {
 }
 .h2 {
   padding-left: 100px;
+  font-size: 120%;
 }
 /* .column img {
   border-radius: 100px;
@@ -89,7 +91,7 @@ hr {
 
 .login-card,
 .signup-card {
-  background-color: rgb(162, 197, 220);
+  background-color: var(--lightblue);
   border: 1px solid #ccc;
   border-radius: 10px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -133,4 +135,20 @@ hr {
 
 .motto-bold {
   color: var(--orange);
+}
+
+.stat {
+  background-color: var(--jet);
+  border-radius: 100px;
+  margin: 2rem;
+}
+
+.stat img {
+  border-radius: 100px;
+}
+
+.activity-feed {
+  background-color: var(--charcoal);
+  color: antiquewhite;
+  padding: 2rem;
 }

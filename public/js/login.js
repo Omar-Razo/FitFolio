@@ -14,7 +14,7 @@ const loginFormHandler = async (event) => {
     });
 
     if (response.ok) {
-      return
+      document.location.replace('/dashboard')
     } else {
       alert(response.statusText);
     }
@@ -40,7 +40,7 @@ const signupFormHandler = async (event) => {
     });
 
     if (response.ok) {
-      return
+      document.location.replace('/dashboard')
     } else {
       alert(response.statusText);
     }
