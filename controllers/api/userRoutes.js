@@ -90,6 +90,7 @@ router.get('/bmi', (req, res) => {
   router.get('/steps', (req, res) => {
     // Query database and return steps
   });
+
   
 router.post('/activity/new', async (req, res) => {
     try {
