@@ -32,13 +32,20 @@ FitFolio is a simple to use health and fitness app for everyone. It is applicati
 - Explore monetization options like paid premium features or ads
 - Consider mobile app development for native iOS and Android apps
 - Integrate with third party fitness devices and services via APIs
-- Add social media sharing of workouts and progresS
+- Add social media sharing of workouts and progress
 
 ## Deployed App Image
-### Screenshot of FitFolio Login and Sign Up Page
-![Alt text](fit-folio-13bba83b2006.herokuapp.com_login.png)
+### FitFolio Login and Sign Up Page
+![Alt text](<fit-folio-13bba83b2006.herokuapp.com_login (1).png>)
 
-### Screenshot of FitFolio Dashboard Page
+### FitFolio Dashboard Page
+![Alt text](image-1.png)
+
+### FitFolio Daily Log Entry
+![Alt text](<image (1).png>)
+
+### FitFolio Activity Log Entry
+![Alt text](<image (2).png>)
 
 ## Deployed App Link
 https://fit-folio-13bba83b2006.herokuapp.com/
