@@ -1,44 +1,56 @@
-<!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Fitfolio</title>
-  <link rel="stylesheet" type="text/css" href="css/jass.css">
-  <link
-    rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
-  />
-  <link rel="stylesheet" type="text/css" href="css/style.css" />
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fitfolio</title>
+    <link rel="stylesheet" type="text/css" href="css/jass.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+    />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+  </head>
 
   <body class="">
     <header>
       <nav>
         <ul>
-          <h1>FitFolio <img src="https://upload.wikimedia.org/wikipedia/commons/5/54/Health_icon_%28www.gov.ph%29.png" alt="heart with cardiogram"> </h1>
+          <h1>FitFolio
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/5/54/Health_icon_%28www.gov.ph%29.png"
+              alt="heart with cardiogram"
+            />
+          </h1>
         </ul>
         <!-- Conditionally render login or logout links -->
         {{#if logged_in}}
-        <button class="no-button" id="logout">logout</button>
+          <div
+            class="buttons"
+            style="display: flex; justify-content:end; width: 100%;"
+          >
+            <button class="button is-info">Update Progress</button>
+            <button class="button is-info">New Activity</button>
+            <button class="button is-danger" id="logout">logout</button>
+          </div>
+
         {{/if}}
       </nav>
       <div class="motto">
         {{#if logged_in}}
-        <p>Welcome back {{user.name}}!</p>
+          <p>Welcome back {{user.name}}!</p>
         {{else}}
-        <p>Record your <span class="motto-bold">journey</span></p>
-        <p>one <span class="motto-bold">step</span> at a time.</p>
+          <p>Record your <span class="motto-bold">journey</span></p>
+          <p>one <span class="motto-bold">step</span> at a time.</p>
         {{/if}}
       </div>
     </header>
 
     {{{body}}}
-  
-  <!-- Render script for logged in users only -->
-  {{#if logged_in}}
-  <script src="/js/logout.js"></script>
-  {{/if}}
+
+    <!-- Render script for logged in users only -->
+    {{#if logged_in}}
+      <script src="/js/logout.js"></script>
+    {{/if}}
   </body>
 </html>
