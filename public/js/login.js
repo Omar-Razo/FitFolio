@@ -56,20 +56,3 @@ document
 document
   .querySelector('.signup-form')
   .addEventListener('submit', signupFormHandler);
-
-
-const checkDailyLogStatus = async () => {
-  const currentDate = new Date().toISOString().slice(0, 10); 
-  // Get the current date in YYYY-MM-DD format
-  const existingLog = await DailyLog.findOne({ where: { date_created: currentDate } });
-
-  if (existingLog) {
-    // Log already exists for the current date
-    console.log('Log already exists for today');
-    // You can access the existing log's attributes using existingLog.attributeName
-  } else {
-    // Log doesn't exist for the current date, create a new one
-    const newLog = await DailyLog.create({ date_created: currentDate });
-    console.log('New log created:', newLog);
-  }
-}
