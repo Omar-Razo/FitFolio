@@ -12,11 +12,6 @@ User.hasOne(DailyLog, {
     onDelete: 'CASCADE'
 })
 
-// DailyLog.hasMany(Activity, {
-//     foreignKey: 'date_created',
-//     onDelete: 'CASCADE'
-// })
-
 Activity.belongsTo(User, {
     foreignKey: 'user_id'
 });
@@ -24,10 +19,5 @@ Activity.belongsTo(User, {
 DailyLog.belongsTo(User, {
     foreignKey: 'user_id'
 })
-
-// Activity.hasOne(DailyLog, {
-//     foreignKey: 'date_created',
-//     onDelete: 'CASCADE'
-// })
 
 module.exports = { User, Activity , DailyLog };

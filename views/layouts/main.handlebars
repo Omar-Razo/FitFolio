@@ -23,26 +23,21 @@
             />
           </h1>
         </ul>
-        <!-- Conditionally render login or logout links -->
-        {{#if logged_in}}
-          <div
-            class="buttons"
-            style="display: flex; justify-content:end; width: 100%;"
-          >
-            <button class="button is-info">Update Progress</button>
-            <button class="button is-info">New Activity</button>
-            <button class="button is-danger" id="logout">logout</button>
-          </div>
-
-        {{/if}}
       </nav>
+
       <div class="motto">
         {{#if logged_in}}
-          <p>Welcome back {{user.name}}!</p>
+        <p>Welcome back <span class="motto-bold">{{user.name}}</span>!</p>
+          <div class="buttons">
+            <button class="button is-info" id="daily-log-button">Update Progress</button>
+            <button class="button is-info" id="new-activity-button">New Activity</button>
+            <button class="button is-danger" id="logout">logout</button>
+          </div>
         {{else}}
           <p>Record your <span class="motto-bold">journey</span></p>
           <p>one <span class="motto-bold">step</span> at a time.</p>
         {{/if}}
+
       </div>
     </header>
 

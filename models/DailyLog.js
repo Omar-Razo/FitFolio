@@ -11,12 +11,12 @@ DailyLog.init(
         primaryKey: true,
         autoIncrement: true,
     },
-    calories_consumed: {
+    calories: {
         type: DataTypes.INTEGER,
         defaultValue: '0',
         allowNull: true,
     },
-    step_count: {
+    steps: {
         type: DataTypes.INTEGER,
         defaultValue: '0',
         allowNull: true,
@@ -26,10 +26,14 @@ DailyLog.init(
         defaultValue: '0',
         allowNull: true,
     },
+    weight: {
+        type: DataTypes.INTEGER,
+        defaultValue: '0',
+        allowNull: true,
+    },
     date_created: {
         type: DataTypes.DATEONLY,
         defaultValue: DataTypes.NOW,
-        unique: true
     },
     user_id: {
         type: DataTypes.INTEGER,
