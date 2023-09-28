@@ -13,14 +13,17 @@ DailyLog.init(
     },
     calories_consumed: {
         type: DataTypes.INTEGER,
+        defaultValue: '0',
         allowNull: true,
     },
     step_count: {
         type: DataTypes.INTEGER,
+        defaultValue: '0',
         allowNull: true,
     },
     activity_minutes: {
         type: DataTypes.INTEGER,
+        defaultValue: '0',
         allowNull: true,
     },
     date_created: {

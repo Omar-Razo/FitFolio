@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User } = require('../../models');
+const { User, DailyLog, Activity } = require('../../models');
 
 //Create new user
 router.post('/', async (req, res) => {
@@ -11,7 +11,7 @@ router.post('/', async (req, res) => {
             height: req.body.height,
             weight: req.body.weight,
             age: req.body.age,
-            gender: req.body.age,
+            gender: req.body.gender,
             role: 'user'
         });
 
@@ -19,7 +19,11 @@ router.post('/', async (req, res) => {
             req.session.user_id = userData.id;
             req.session.logged_in = true;
             req.session.role = userData.role
-            res.status(200).json(userData);
+            res.status(200).json({ 
+                user: userData, 
+                message: 'You are now registered!',
+                redirectUrl: '/dashboard'
+            });
         });
     } catch (err) {
         console.log(err); 
@@ -49,7 +53,11 @@ router.post('/login', async (req, res) => {
             req.session.user_id = userData.id;
             req.session.logged_in = true;
             req.session.role = userData.role
-            res.status(200).json({ user: userData, message: 'You are now logged in!' });
+            res.status(200).json({ 
+                user: userData, 
+                message: 'You are now logged in!',
+                // redirectUrl: '/dashboard'
+            });
         });
     } catch (err) {
         console.log(err);
@@ -83,4 +91,28 @@ router.get('/bmi', (req, res) => {
     // Query database and return steps
   });
   
+router.post('/activity/new', async (req, res) => {
+    try {
+        const userData = await Activity.create({
+            activity_type: req.body.activity_type,
+            duration: req.body.duration
+        });
+
+        req.session.save(() => {
+            req.session.user_id = userData.id;
+            req.session.logged_in = true;
+            req.session.role = userData.role
+            res.status(200).json({ 
+                user: userData, 
+                message: 'You are now registered!',
+                // redirectUrl: '/dashboard'
+            });
+        });
+    } catch (err) {
+        console.log(err); 
+        res.status(500).json(err);
+    };
+});
+
+
 module.exports = router;
