@@ -1,31 +1,30 @@
 
-
 <section class="columns main-stats justify-space-between">
   <div class="column stat steps">
     <div class="img-container">    
       <img src="img/Long_Distance_Runners,_Ancient_Greece,_Amphora.png" alt="woman running">
     </div>
-    <p>{{dailylog.step_count}}</p>
+    <p>{{dailylog.steps}} Steps Today</p>
   </div>
 
   <div class="column stat calories">
     <div class="img-container">    
       <img src="image/02-meal-prep-black-lunch.webp" alt="healthy lunch set out">
     </div>
-    <p>{{dailylog.calories_consumed}}</p>
+    <p>{{dailylog.calories}} Calories Eaten Today</p>
   </div>
 
   <div class="column stat high-intensity">
     <div class="img-container">    
       <img src="image/03-wp2491522.jpg" alt="hand lifting weight">
     </div>
-    <p>{{dailylog.activity_minutes}}</p>
+    <p>Lifetime Activities: {{activities.length}}</p>
   </div>
 </section>
 
-<h2>Activity Feed</h2>
-<section class="activity-feed">
 
+<section class="activity-feed">
+<h2 class="feed-header">Activity Feed</h2>
     {{#if activities.length}}
       {{#each activities as |activity|}}
       {{> activity-details}}
@@ -33,25 +32,22 @@
     {{/if}}
 </section>
 
-{{!-- {{if loggedIn}}
-  // Make async request for BMI
-$.get('/api/users/bmi', function(data) {
-  $('#bmi').text(data); 
-});
 
-// Make async request for BMR
-$.get('/api/users/bmr', function(data) {
-  $('#bmr').text(data);
-});
+    {{!-- modals --}}
+  <div class="modals">
+    <div class="modal" id="daily-log-modal">
+      <div class="modal-background" id="dl-modal-background"></div>
+        <div class="modal-content has-background-white p-5" id="dl-modal-content">
+          {{> daily-log-entry}}
+        </div>
+      </div>
 
-// Make async request for steps  
-$.get('/api/users/steps', function(data) {
-  $('#steps').text(data);
-});
-  <div class="footer">
-    <style>display:inline-block</style>
-    <ul>
-    <li id="bmi"></li> <li id ="bmr"></li> <li id = "steps"></li>
-    </ul>
+    <div class="modal" id="activity-modal">
+      <div class="modal-background" id="act-modal-background"></div>
+        <div class="modal-content has-background-white p-5" id="act-modal-content">
+          {{> activity-entry}}
+        </div>
+      </div>
   </div>
-{{/if loggedIn}} --}}
+
+<script src="js/modal-logic.js"></script>

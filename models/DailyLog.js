@@ -34,7 +34,6 @@ DailyLog.init(
     date_created: {
         type: DataTypes.DATEONLY,
         defaultValue: DataTypes.NOW,
-        unique: true
     },
     user_id: {
         type: DataTypes.INTEGER,

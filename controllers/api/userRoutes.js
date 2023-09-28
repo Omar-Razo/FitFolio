@@ -76,25 +76,6 @@ router.post('/logout', (req, res) => {
     }
 });
 
-//updates daily log entry with new data (increment)
-router.put('/dailylog', withAuth, async (req, res) => {
-    try {
-        const currentDate = new Date().toISOString().slice(0, 10); 
-        const existingLog = await DailyLog.findOne({ 
-            where: { date_created: currentDate , user_id: req.session.user_id 
-            }})
-        if (!existingLog) {
-            const newLog = await DailyLog.create({ date_created: currentDate, user_id: req.session.user_id });
-            console.log('New log created:', newLog);
-        } else {
-            await existingLog.increment(`${req.body.statType}`, { by: req.body.amount })
-            res.status(200).json(existingLog)
-        }
-    } catch {
-        res.status(500).json(err);
-        console.log(err)
-    }
-})
 
 
 module.exports = router;

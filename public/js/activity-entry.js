@@ -2,10 +2,10 @@ const activityEntryHandler = async (event) => {
     event.preventDefault();
     
     const activity_type = document.querySelector('#type').value;
-    const duration = document.querySelector('#actvity-duration').value.trim();
+    const duration = document.querySelector('#activity-duration').value;
 
     if (activity_type && duration) {
-        const response = await fetch('/api/activity/', {
+        const response = await fetch('/api/activity', {
             method: 'POST',
             body: JSON.stringify({ activity_type, duration}),
             headers: { 'Content-Type': 'application/json' },
