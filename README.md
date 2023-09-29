@@ -4,7 +4,7 @@
 ## Table of Contents
 1. [Project Description](#project-description)
 2. [Acceptance Criteria](#acceptance-criteria)
-3. [Work Completed](#work-complete)
+3. [Work Completed](#work-completed)
 4. [Future Improvements](#future-improvements)
 5. [Deployed App Image](#deployed-app-image)
 6. [Deployed App Link](#deployed-app-link)
@@ -48,7 +48,7 @@ FitFolio is a simple to use health and fitness app for everyone. It is applicati
 ![Alt text](</public/img/image (2).png>)
 
 ## Deployed App Link
-https://fit-folio-13bba83b2006.herokuapp.com/
+https://fitfolio-acfec075c4c6.herokuapp.com/
 
 ## Credits
 ### Contributors
